@@ -1,0 +1,161 @@
+2026-11-26T09:56:50.808Z [INFO] Global setup: UI=http://localhost:4200 API=http://localhost:8091
+2026-11-26T09:56:54.148Z [INFO] Application is reachable
+
+Running 20 tests using 2 workers
+
+2026-11-26T09:56:54.864Z [INFO] START product can be added to the cart
+Authentication suite: start
+2026-11-26T09:56:54.906Z [INFO] START valid user can log in
+2026-11-26T09:56:55.661Z [INFO] Navigate to /auth/login
+2026-11-26T09:56:55.742Z [INFO] Navigate to /
+2026-11-26T09:56:56.697Z [INFO] Click product "Combination Pliers"
+2026-11-26T09:56:56.875Z [INFO] Click add to cart
+2026-11-26T09:56:56.927Z [INFO] API POST /users/register -> 201 (365 ms)
+2026-11-26T09:56:56.929Z [INFO] Fill email
+2026-11-26T09:56:57.009Z [INFO] Fill password
+2026-11-26T09:56:57.051Z [INFO] Click login button
+2026-11-26T09:56:57.128Z [INFO] Popup: "Product added to shopping cart."
+2026-11-26T09:56:57.727Z [INFO] Click cart icon
+valid user can log in: finished at http://localhost:4200/account
+2026-11-26T09:56:57.862Z [INFO] END valid user can log in -> passed (2259 ms)
+  ✓   2 [ui] › tests/ui/auth.spec.js:11:3 › Authentication › valid user can log in (2.4s)
+2026-11-26T09:56:57.897Z [INFO] START login is rejected: unknown email
+2026-11-26T09:56:58.003Z [INFO] Navigate to /auth/login
+2026-11-26T09:56:58.248Z [INFO] END product can be added to the cart -> passed (2619 ms)
+  ✓   1 [ui] › tests/ui/cart.spec.js:13:3 › Cart and checkout › product can be added to the cart (2.8s)
+2026-11-26T09:56:58.273Z [INFO] START product can be removed from the cart
+2026-11-26T09:56:58.350Z [INFO] Navigate to /
+2026-11-26T09:56:58.447Z [INFO] Fill email
+2026-11-26T09:56:58.579Z [INFO] Fill password
+2026-11-26T09:56:58.610Z [INFO] Click login button
+login is rejected: unknown email: finished at http://localhost:4200/auth/login
+2026-11-26T09:56:58.800Z [INFO] END login is rejected: unknown email -> passed (840 ms)
+  ✓   3 [ui] › tests/ui/auth.spec.js:19:5 › Authentication › login is rejected: unknown email (896ms)
+2026-11-26T09:56:58.813Z [INFO] START login is rejected: another unknown account
+2026-11-26T09:56:58.884Z [INFO] Navigate to /auth/login
+2026-11-26T09:56:59.077Z [INFO] Click product "Combination Pliers"
+2026-11-26T09:56:59.181Z [INFO] Click add to cart
+2026-11-26T09:56:59.324Z [INFO] Fill email
+2026-11-26T09:56:59.514Z [INFO] Popup: "Product added to shopping cart."
+2026-11-26T09:56:59.536Z [INFO] Fill password
+2026-11-26T09:56:59.580Z [INFO] Click login button
+login is rejected: another unknown account: finished at http://localhost:4200/auth/login
+2026-11-26T09:56:59.782Z [INFO] END login is rejected: another unknown account -> passed (901 ms)
+  ✓   5 [ui] › tests/ui/auth.spec.js:19:5 › Authentication › login is rejected: another unknown account (962ms)
+2026-11-26T09:56:59.791Z [INFO] START logged-in user can log out
+2026-11-26T09:56:59.834Z [INFO] Navigate to /auth/login
+2026-11-26T09:56:59.896Z [INFO] Click cart icon
+2026-11-26T09:57:00.171Z [INFO] Click remove item
+2026-11-26T09:57:00.448Z [INFO] API POST /users/register -> 201 (206 ms)
+2026-11-26T09:57:00.452Z [INFO] Fill email
+2026-11-26T09:57:00.461Z [INFO] END product can be removed from the cart -> passed (2097 ms)
+  ✓   4 [ui] › tests/ui/cart.spec.js:20:3 › Cart and checkout › product can be removed from the cart (2.2s)
+2026-11-26T09:57:00.474Z [INFO] START signed-in user can complete checkout
+2026-11-26T09:57:00.545Z [INFO] Fill password
+2026-11-26T09:57:00.579Z [INFO] Click login button
+2026-11-26T09:57:00.796Z [INFO] API POST /users/register -> 201 (224 ms)
+2026-11-26T09:57:00.798Z [INFO] Navigate to /auth/login
+2026-11-26T09:57:01.176Z [INFO] Click user menu
+2026-11-26T09:57:01.239Z [INFO] Fill email
+2026-11-26T09:57:01.261Z [INFO] Click sign out
+2026-11-26T09:57:01.388Z [INFO] Fill password
+2026-11-26T09:57:01.426Z [INFO] Click login button
+logged-in user can log out: finished at http://localhost:4200/account
+2026-11-26T09:57:01.778Z [INFO] END logged-in user can log out -> passed (1871 ms)
+  ✓   6 [ui] › tests/ui/auth.spec.js:26:3 › Authentication › logged-in user can log out (2.0s)
+2026-11-26T09:57:01.789Z [INFO] START new visitor can register
+2026-11-26T09:57:01.866Z [INFO] Navigate to /auth/login
+2026-11-26T09:57:02.095Z [INFO] Navigate to /
+2026-11-26T09:57:02.399Z [INFO] Navigate to /auth/register
+2026-11-26T09:57:02.709Z [INFO] Click product "Combination Pliers"
+2026-11-26T09:57:02.856Z [INFO] Fill first name
+2026-11-26T09:57:02.904Z [INFO] Click add to cart
+2026-11-26T09:57:03.119Z [INFO] Fill last name
+2026-11-26T09:57:03.173Z [INFO] Popup: "Product added to shopping cart."
+2026-11-26T09:57:03.183Z [INFO] Fill date of birth
+2026-11-26T09:57:03.216Z [INFO] Select country
+2026-11-26T09:57:03.261Z [INFO] Fill postal code
+2026-11-26T09:57:03.311Z [INFO] Fill house number
+2026-11-26T09:57:03.562Z [INFO] Click cart icon
+2026-11-26T09:57:03.648Z [INFO] Fill street
+2026-11-26T09:57:03.661Z [INFO] Click proceed to checkout
+2026-11-26T09:57:03.745Z [INFO] Fill city
+2026-11-26T09:57:03.827Z [INFO] Fill state
+2026-11-26T09:57:03.867Z [INFO] Fill phone
+2026-11-26T09:57:03.908Z [INFO] Fill email
+2026-11-26T09:57:03.913Z [INFO] Click proceed (signed in)
+2026-11-26T09:57:03.966Z [INFO] Fill password
+2026-11-26T09:57:04.017Z [INFO] Click register button
+2026-11-26T09:57:04.084Z [INFO] Click proceed to payment
+2026-11-26T09:57:04.263Z [INFO] Select payment method cash-on-delivery
+2026-11-26T09:57:04.320Z [INFO] Click check payment
+2026-11-26T09:57:04.420Z [INFO] Click confirm order
+new visitor can register: finished at http://localhost:4200/auth/login
+2026-11-26T09:57:04.716Z [INFO] END new visitor can register -> passed (2802 ms)
+Authentication suite: end
+  ✓   8 [ui] › tests/ui/auth.spec.js:33:3 › Authentication › new visitor can register (2.9s)
+2026-11-26T09:57:04.755Z [INFO] START search returns matching products: Pliers
+2026-11-26T09:57:04.811Z [INFO] END signed-in user can complete checkout -> passed (4248 ms)
+  ✓   7 [ui] › tests/ui/cart.spec.js:28:3 › Cart and checkout › signed-in user can complete checkout (4.3s)
+2026-11-26T09:57:04.821Z [INFO] Navigate to /
+2026-11-26T09:57:05.368Z [INFO] Fill search term "Pliers"
+2026-11-26T09:57:05.435Z [INFO] Click search button
+2026-11-26T09:57:05.507Z [INFO] START POST login returns a token
+2026-11-26T09:57:05.618Z [INFO] END search returns matching products: Pliers -> passed (803 ms)
+  ✓   9 [ui] › tests/ui/catalog.spec.js:8:5 › Product catalogue › search returns matching products: Pliers (862ms)
+2026-11-26T09:57:05.625Z [INFO] START search returns matching products: Hammer
+2026-11-26T09:57:05.703Z [INFO] Navigate to /
+2026-11-26T09:57:05.729Z [INFO] API POST /users/register -> 201 (198 ms)
+2026-11-26T09:57:05.812Z [INFO] API POST /users/login -> 200 (72 ms)
+2026-11-26T09:57:05.874Z [INFO] END POST login returns a token -> passed (359 ms)
+  ✓  10 [api] › tests/api/auth.api.spec.js:7:3 › API: authentication › POST login returns a token (369ms)
+2026-11-26T09:57:05.983Z [INFO] API POST /users/login -> 200 (69 ms)
+2026-11-26T09:57:06.021Z [INFO] START POST creates a brand
+2026-11-26T09:57:06.057Z [INFO] API POST /brands -> 201 (32 ms)
+2026-11-26T09:57:06.068Z [INFO] END POST creates a brand -> passed (42 ms)
+  ✓  12 [api] › tests/api/brands.api.spec.js:36:3 › API: brand lifecycle › POST creates a brand (47ms)
+2026-11-26T09:57:06.078Z [INFO] START PUT replaces the brand
+2026-11-26T09:57:06.119Z [INFO] API PUT /brands/01m8bmk3c1f90vamq4nsp24jwb -> 200 (36 ms)
+2026-11-26T09:57:06.175Z [INFO] API GET /brands/01m8bmk3c1f90vamq4nsp24jwb -> 200 (31 ms)
+2026-11-26T09:57:06.179Z [INFO] END PUT replaces the brand -> passed (98 ms)
+  ✓  13 [api] › tests/api/brands.api.spec.js:44:3 › API: brand lifecycle › PUT replaces the brand (101ms)
+2026-11-26T09:57:06.197Z [INFO] START PATCH changes only the name
+2026-11-26T09:57:06.224Z [INFO] API PATCH /brands/01m8bmk3c1f90vamq4nsp24jwb -> 200 (23 ms)
+2026-11-26T09:57:06.241Z [INFO] API GET /brands/01m8bmk3c1f90vamq4nsp24jwb -> 200 (14 ms)
+2026-11-26T09:57:06.244Z [INFO] END PATCH changes only the name -> passed (45 ms)
+  ✓  14 [api] › tests/api/brands.api.spec.js:52:3 › API: brand lifecycle › PATCH changes only the name (48ms)
+2026-11-26T09:57:06.271Z [INFO] START DELETE removes the brand
+2026-11-26T09:57:06.296Z [INFO] Fill search term "Hammer"
+2026-11-26T09:57:06.315Z [INFO] API DELETE /brands/01m8bmk3c1f90vamq4nsp24jwb -> 204 (33 ms)
+2026-11-26T09:57:06.337Z [INFO] API GET /brands/01m8bmk3c1f90vamq4nsp24jwb -> 404 (20 ms)
+2026-11-26T09:57:06.345Z [INFO] END DELETE removes the brand -> passed (68 ms)
+2026-11-26T09:57:06.354Z [INFO] Click search button
+  ✓  15 [api] › tests/api/brands.api.spec.js:60:3 › API: brand lifecycle › DELETE removes the brand (75ms)
+2026-11-26T09:57:06.384Z [INFO] START GET unknown brand returns 404
+2026-11-26T09:57:06.401Z [INFO] API GET /brands/does-not-exist -> 404 (13 ms)
+2026-11-26T09:57:06.405Z [INFO] END GET unknown brand returns 404 -> passed (19 ms)
+  ✓  16 [api] › tests/api/brands.api.spec.js:70:3 › API: negative › GET unknown brand returns 404 (21ms)
+2026-11-26T09:57:06.432Z [INFO] START GET product list
+2026-11-26T09:57:06.462Z [INFO] API GET /products -> 200 (23 ms)
+2026-11-26T09:57:06.469Z [INFO] END GET product list -> passed (34 ms)
+  ✓  17 [api] › tests/api/products.api.spec.js:7:3 › API: products › GET product list (38ms)
+2026-11-26T09:57:06.487Z [INFO] START GET single product by id
+2026-11-26T09:57:06.538Z [INFO] API GET /products -> 200 (25 ms)
+2026-11-26T09:57:06.555Z [INFO] API GET /products/01M8BMJHPT91SSP685BMF3N2G7 -> 200 (15 ms)
+2026-11-26T09:57:06.564Z [INFO] END GET single product by id -> passed (72 ms)
+  ✓  18 [api] › tests/api/products.api.spec.js:13:3 › API: products › GET single product by id (77ms)
+2026-11-26T09:57:06.609Z [INFO] END search returns matching products: Hammer -> passed (918 ms)
+  ✓  11 [ui] › tests/ui/catalog.spec.js:8:5 › Product catalogue › search returns matching products: Hammer (982ms)
+2026-11-26T09:57:06.618Z [INFO] START category filter narrows the product list
+2026-11-26T09:57:06.680Z [INFO] Navigate to /
+2026-11-26T09:57:07.132Z [INFO] Click category "Hammer"
+2026-11-26T09:57:07.367Z [INFO] END category filter narrows the product list -> passed (681 ms)
+  ✓  19 [ui] › tests/ui/catalog.spec.js:15:3 › Product catalogue › category filter narrows the product list (748ms)
+2026-11-26T09:57:07.376Z [INFO] START product details page shows name, price and description
+2026-11-26T09:57:07.426Z [INFO] Navigate to /
+2026-11-26T09:57:07.908Z [INFO] Click product "Combination Pliers"
+2026-11-26T09:57:08.127Z [INFO] END product details page shows name, price and description -> passed (691 ms)
+  ✓  20 [ui] › tests/ui/catalog.spec.js:26:3 › Product catalogue › product details page shows name, price and description (749ms)
+2026-11-26T09:57:08.660Z [INFO] Global teardown: run finished
+
+  20 passed (17.9s)
