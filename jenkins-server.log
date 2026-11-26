@@ -1,0 +1,31 @@
+Running from: /usr/share/jenkins/jenkins.war
+webroot: /var/jenkins_home/war
+2026-11-26 10:02:01.091+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+2026-11-26 10:02:01.551+0000 [id=1]	WARNING	o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+2026-11-26 10:02:01.615+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-12.1.14; built: 2026-10-02T05:48:05.032Z; git: 15cecbd757a2f6b0fdc6a8944f4c6d0020b17da0; jvm 21.0.13.1+2-LTS
+2026-11-26 10:02:02.049+0000 [id=1]	INFO	o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+2026-11-26 10:02:02.093+0000 [id=1]	INFO	o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2026-11-26 10:02:02.471+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2026-11-26 10:02:02.559+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@12d1f1d4{Jenkins v2.580.3,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@75fa1be3{STARTED}}
+2026-11-26 10:02:02.568+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@76889e60{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-11-26 10:02:02.568+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started oejs.Server@6c15e8c7{STARTING}[12.1.14,sto=0] @958ms
+2026-11-26 10:02:02.569+0000 [id=34]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2026-11-26 10:02:02.674+0000 [id=33]	INFO	jenkins.model.Jenkins#<init>: Starting version 2.580.3
+2026-11-26 10:02:02.749+0000 [id=42]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2026-11-26 10:02:03.889+0000 [id=47]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2026-11-26 10:02:05.947+0000 [id=40]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2026-11-26 10:02:05.970+0000 [id=47]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2026-11-26 10:02:05.974+0000 [id=45]	INFO	o.a.jenkins.AllureXStreamAliases#registerAliases: Registering Allure XStream compatibility aliases
+2026-11-26 10:02:05.977+0000 [id=40]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2026-11-26 10:02:06.857+0000 [id=45]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2026-11-26 10:02:06.858+0000 [id=45]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2026-11-26 10:02:06.858+0000 [id=41]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2026-11-26 10:02:06.865+0000 [id=41]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2026-11-26 10:02:06.872+0000 [id=43]	INFO	j.util.groovy.GroovyHookScript#execute: Executing /var/jenkins_home/init.groovy.d/init.groovy
+2026-11-26 10:02:06.890+0000 [id=61]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+2026-11-26 10:02:07.701+0000 [id=43]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2026-11-26 10:02:07.799+0000 [id=33]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2026-11-26 10:02:09.295+0000 [id=61]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2026-11-26 10:02:09.361+0000 [id=61]	WARNING	h.m.DownloadService$Downloadable#updateNow: No tool installer metadata found for org.allurereport.jenkins.tools.AllureCommandlineInstaller
+2026-11-26 10:02:09.590+0000 [id=61]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstaller
+2026-11-26 10:02:09.591+0000 [id=61]	INFO	hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
