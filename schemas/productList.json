@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "required": ["current_page", "data", "total"],
+  "properties": {
+    "current_page": { "type": "integer" },
+    "total": { "type": "integer", "minimum": 1 },
+    "data": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "price"],
+        "properties": { "id": { "type": "string" }, "name": { "type": "string" }, "price": { "type": "number" } }
+      }
+    }
+  }
+}

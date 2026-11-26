@@ -1,0 +1,21 @@
+{
+  "endpoints": {
+    "login": "/users/login",
+    "register": "/users/register",
+    "products": "/products",
+    "brands": "/brands"
+  },
+  "maxResponseTimeMs": 5000,
+  "contentType": "application/json",
+  "brand": { "namePrefix": "QA Brand", "updatedPrefix": "QA Brand Updated", "patchedPrefix": "QA Brand Patched" },
+  "expected": {
+    "login": { "status": 200, "tokenType": "bearer" },
+    "list": { "status": 200 },
+    "item": { "status": 200 },
+    "create": { "status": 201 },
+    "update": { "status": 200 },
+    "patch": { "status": 200 },
+    "delete": { "status": 204 },
+    "notFound": { "status": 404, "id": "does-not-exist" }
+  }
+}

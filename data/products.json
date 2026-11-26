@@ -1,0 +1,8 @@
+{
+  "searches": [
+    { "term": "Pliers" },
+    { "term": "Hammer" }
+  ],
+  "category": { "name": "Hammer", "expectedInName": "Hammer|Mallet" },
+  "payment": { "method": "cash-on-delivery" }
+}

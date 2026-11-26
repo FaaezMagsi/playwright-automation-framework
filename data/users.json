@@ -1,0 +1,20 @@
+{
+  "template": {
+    "first_name": "Quality",
+    "last_name": "Tester",
+    "dob": "1998-05-14",
+    "phone": "0612345678",
+    "address": {
+      "street": "Test Street",
+      "house_number": "12",
+      "city": "Amsterdam",
+      "state": "Noord-Holland",
+      "country": "NL",
+      "postal_code": "1012AB"
+    }
+  },
+  "invalidLogins": [
+    { "case": "unknown email", "email": "nobody.qa@example.com", "password": "WrongPass!234", "error": "Invalid email or password" },
+    { "case": "another unknown account", "email": "ghost.qa@example.com", "password": "AnotherBad#987", "error": "Invalid email or password" }
+  ]
+}

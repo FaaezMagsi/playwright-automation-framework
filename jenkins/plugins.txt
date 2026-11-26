@@ -1,0 +1,7 @@
+workflow-aggregator
+git
+timestamper
+pipeline-stage-view
+allure-jenkins-plugin
+credentials
+plain-credentials
