@@ -2,7 +2,7 @@ name: Debug tests
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/debug-tests.yml', 'tests/**', 'pages/**', 'utils/**', 'fixtures/**', 'data/**', 'scripts/start-app.sh', 'docker-compose.app.yml']
+    paths: ['.github/workflows/debug-tests.yml', 'tests/**', 'pages/**', 'utils/**', 'fixtures/**', 'data/**', 'scripts/start-app.sh', 'docker-compose.app.yml', 'app/**']
 permissions:
   contents: write
 jobs:

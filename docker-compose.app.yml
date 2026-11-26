@@ -9,7 +9,9 @@ services:
       DISABLE_LOGGING: "true"
     depends_on: [mariadb]
   web:
-    image: testsmith/practice-software-testing-web
+    build:
+      context: ./app
+      dockerfile: web.Dockerfile
     ports: ["8091:80"]
     depends_on: [laravel-api]
   angular-ui:
