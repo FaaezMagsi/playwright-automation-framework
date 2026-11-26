@@ -51,6 +51,21 @@ jobs:
             npx allure generate /tmp/artifacts/archive/allure-results --single-file --clean -o evidence/allure-report || true
           fi
 
+      # Not part of the 20 tests' results: one expected value is deliberately broken
+      # inside a throwaway container to show how a failure appears in the report.
+      - name: Failure reporting demonstration
+        if: always()
+        run: |
+          ./scripts/start-app.sh
+          docker build -q -t failure-demo .
+          docker run --name failure-demo --ipc=host --network host \
+            -e BASE_URL=http://localhost:4200 -e API_URL=http://localhost:8091 failure-demo \
+            sh -c "sed -i 's/Invalid email or password/DELIBERATELY WRONG EXPECTED TEXT/' data/users.json && npx playwright test --project=ui --retries=0 -g 'rejected: unknown email'" || true
+          docker cp failure-demo:/app/allure-results /tmp/demo-results
+          npx allure generate /tmp/demo-results --single-file --clean -o evidence/failure-demo-report
+          mkdir -p evidence/failure-demo-report
+          find /tmp/demo-results -name '*.png' -exec cp {} evidence/failure-demo-report/failure-screenshot.png \;
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -60,7 +60,8 @@ async function waitForBuild() {
     try {
       await page.goto(url, { waitUntil: 'networkidle', timeout: 60_000 });
       await sleep(4000);
-      if (name === '04-console-output') await page.keyboard.press('End');
+      // Scroll to the end of the log so the final result line is visible.
+      if (name === '04-console-output') await page.locator('pre.console-output').evaluate((el) => el.scrollIntoView(false));
       await page.screenshot({ path: `${OUT}/screenshots/${name}.png`, fullPage: name !== '04-console-output' });
       console.log(`Captured ${name}`);
     } catch (error) {
