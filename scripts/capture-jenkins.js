@@ -11,14 +11,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function waitForBuild() {
   const deadline = Date.now() + 40 * 60 * 1000;
+  const startBy = Date.now() + 5 * 60 * 1000;
+  let seen = false;
   while (Date.now() < deadline) {
     try {
       const res = await fetch(`${JOB}/lastBuild/api/json`, { headers });
       if (res.ok) {
         const build = await res.json();
+        seen = true;
         if (!build.building && build.result) return build;
       }
     } catch { /* Jenkins still starting */ }
+    if (!seen && Date.now() > startBy) throw new Error('Jenkins never started a build; check jenkins-server.log');
     await sleep(10_000);
   }
   throw new Error('Jenkins build did not finish in time');

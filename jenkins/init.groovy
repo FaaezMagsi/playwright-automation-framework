@@ -8,7 +8,7 @@ import com.cloudbees.plugins.credentials.domains.Domain
 import com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl
 import org.jenkinsci.plugins.workflow.job.WorkflowJob
 import org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition
-import ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation
+import org.allurereport.jenkins.tools.AllureCommandlineInstallation
 
 def env = System.getenv()
 def jenkins = Jenkins.get()
