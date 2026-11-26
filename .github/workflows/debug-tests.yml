@@ -2,7 +2,7 @@ name: Debug tests
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/debug-tests.yml', 'tests/**', 'pages/**', 'utils/**', 'fixtures/**', 'data/**']
+    paths: ['.github/workflows/debug-tests.yml', 'tests/**', 'pages/**', 'utils/**', 'fixtures/**', 'data/**', 'scripts/start-app.sh', 'docker-compose.app.yml']
 permissions:
   contents: write
 jobs:
@@ -12,7 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build -t pw .
-      - run: mkdir out && docker run --name pwdebug --ipc=host pw > out/run.log 2>&1 || true
+      - run: |
+          mkdir out
+          ./scripts/start-app.sh > out/app.log 2>&1 || true
+          docker run --name pwdebug --ipc=host --network host -e BASE_URL=http://localhost:4200 -e API_URL=http://localhost:8091 pw > out/run.log 2>&1 || true
+          docker compose -f docker-compose.app.yml logs --tail 40 >> out/app.log 2>&1 || true
       - if: always()
         run: |
           docker cp pwdebug:/app/test-results out/ || true
