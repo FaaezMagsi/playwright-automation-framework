@@ -18,14 +18,14 @@ class HomePage extends BasePage {
 
   async search(term) {
     await this.fill(this.searchInput, term, `search term "${term}"`);
-    const response = this.waits.apiResponse(this.page, '/products/search');
+    const response = this.waits.apiResponse(this.page, (call) => call.includes('/products') && call.includes(term));
     await this.click(this.searchButton, 'search button');
     await response;
   }
 
   async filterByCategory(name) {
     const checkbox = this.page.getByRole('checkbox', { name, exact: true });
-    const response = this.waits.apiResponse(this.page, 'by_category');
+    const response = this.waits.apiResponse(this.page, (call) => call.includes('by_category'));
     await this.click(checkbox, `category "${name}"`);
     await response;
   }
